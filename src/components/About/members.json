@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "role": "Product Owner",
+    "image": "/images/data-home.jpg",
+    "Linkedin": ""
+  },
+  {
+    "id": 2,
+    "name": "Jane Doe",
+    "role": "Developer",
+    "image": "/images/data-home.jpg",
+    "Linkedin": ""
+  },
+  {
+    "id": 3,
+    "name": "Bob Smith",
+    "role": "Designer",
+    "image": "/images/data-home.jpg",
+    "Linkedin": ""
+  },
+  {
+    "id": 4,
+    "name": "Alice Johnson",
+    "role": "Developer",
+    "image": "/images/data-home.jpg",
+    "Linkedin": ""
+  },
+  {
+    "id": 5,
+    "name": "Michael Brown",
+    "role": "Designer",
+    "image": "/images/data-home.jpg",
+    "Linkedin": ""
+  },
+  {
+    "id": 6,
+    "name": "Emily Wilson",
+    "role": "Developer",
+    "image": "/images/data-home.jpg",
+    "Linkedin": ""
+  },
+  {
+    "id": 7,
+    "name": "David Miller",
+    "role": "Designer",
+    "image": "/images/data-home.jpg",
+    "Linkedin": ""
+  },
+  {
+    "id": 8,
+    "name": "Olivia Davis",
+    "role": "Developer",
+    "image": "/images/data-home.jpg",
+    "Linkedin": ""
+  },
+  {
+    "id": 9,
+    "name": "Daniel Garcia",
+    "role": "Developer",
+    "image": "/images/data-home.jpg",
+    "Linkedin": ""
+  },
+  {
+    "id": 10,
+    "name": "Sophia Rodriguez",
+    "role": "Developer",
+    "image": "/images/data-home.jpg",
+    "Linkedin": ""
+  },
+  {
+    "id": 11,
+    "name": "Emma Wilson",
+    "role": "Developer",
+    "image": "/images/data-home.jpg",
+    "Linkedin": ""
+  },
+  {
+    "id": 12,
+    "name": "James Taylor",
+    "role": "Developer",
+    "image": "/images/data-home.jpg",
+    "Linkedin": ""
+  }
+]
