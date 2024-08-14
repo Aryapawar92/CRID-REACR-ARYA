@@ -68,7 +68,7 @@ function Header() {
                   isActive ? "text-blue-600" : "text-white"
                 }
               >
-                Event
+                Events
               </NavLink>
             </li>
             <li className="text-white md:mr-12 hover:text-blue-600 text-lg font-semibold tracking-widest  font-redHat">
@@ -78,7 +78,7 @@ function Header() {
                   isActive ? "text-blue-600" : "text-white"
                 }
               >
-                About
+                About Us
               </NavLink>
             </li>
           </ul>

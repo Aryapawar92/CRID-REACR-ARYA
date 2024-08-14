@@ -1,9 +1,14 @@
-import React from "react";
-import Grid from "./CardGrid.jsx";
+import React, { useEffect } from "react";
 import Footer from "../Footer/Footer.jsx";
 import CardGrid from "./CardGrid.jsx";
 
 function About() {
+  const [visible, setVisible] = React.useState(false);
+
+  useEffect(() => {
+    setVisible(true);
+  }, []);
+
   return (
     <div className="hero min-h-screen pt-16 flex flex-col items-center justify-start relative">
       {/* Background Pattern with Overlay */}
@@ -14,7 +19,11 @@ function About() {
           About
           <span className="font-redHat"> CRID</span>
         </h1>
-        <p className="mt-4 text-white text-lg max-w-xl mx-auto text-justify font-space text-shadow">
+        <p
+          className={`mt-4 text-white text-lg max-w-xl mx-auto text-justify font-space text-shadow transform transition-all duration-1000  ${
+            visible ? "opacity-100" : "opacity-0"
+          }`}
+        >
           CRID is a comprehensive platform dedicated to fostering community and
           innovation through research and development. Our mission is to bridge
           the gap between academia and industry, facilitating groundbreaking
@@ -33,7 +42,7 @@ function About() {
         <CardGrid />
       </div>
 
-      {/* Add Footer Component */}
+      {/* Added Footer Component */}
       <Footer />
     </div>
   );
