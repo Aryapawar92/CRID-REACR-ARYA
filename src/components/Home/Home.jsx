@@ -1,16 +1,30 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowDown } from "lucide-react";
 import Footer from "../Footer/Footer.jsx";
 
 function Home() {
   const aboutSectionRef = useRef(null);
+  const [transitionClasses, setTransitionClasses] = useState("");
+  const [hover, setHover] = useState(false);
 
   const scrollToAbout = () => {
     if (aboutSectionRef.current) {
       aboutSectionRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const handleMouseEnter = () => {
+    setHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHover(false);
+  };
+
+  useEffect(() => {
+    setTransitionClasses("translate-x-0 opacity-100");
+  }, []);
 
   return (
     <div className="min-h-screen bg-custom-dark-blue overflow-hidden">
@@ -27,31 +41,29 @@ function Home() {
         {/* Content */}
         <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Left Side: Text Content */}
-          <div className="lg:w-1/2 text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <div
+            className={`lg:w-1/2 text-center lg:text-left transform transition-all duration-1000 ease-out ${
+              transitionClasses
+                ? transitionClasses
+                : "-translate-x-full opacity-0"
+            }`}
+          >
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-redHat">
               CRID
             </h1>
-            <p className="text-white mb-4 text-base sm:text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-              lacinia odio vitae vestibulum vestibulum.
-            </p>
-            <p className="text-white mb-4 text-base sm:text-lg">
-              Curabitur ut elit bibendum, cursus quam in, pharetra urna. Sed
-              cursus, augue vel fringilla auctor, odio nulla scelerisque mi.
-            </p>
-            <p className="text-white mb-4 text-base sm:text-lg">
-              Phasellus consequat libero ac eros aliquet, vel congue odio
-              dictum.
-            </p>
-            <p className="text-white mb-4 text-base sm:text-lg">
-              In ac ipsum nec dolor vehicula sollicitudin. Donec dignissim massa
-              non bibendum ullamcorper.
+            <p className="text-lg sm:text-xl text-white mb-8 font-space">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae at
+              temporibus consequuntur facere neque? Ut laudantium voluptate odit
+              dolorem amet deserunt quas quidem assumenda accusamus eius numquam
+              harum nobis aperiam magni fuga et, perspiciatis eligendi dolore
+              dicta minus corporis? Sunt nesciunt illum nemo recusandae harum
+              placeat nam nihil quidem quibusdam.
             </p>
             <div className="flex justify-center lg:justify-start text-white">
               <button
                 type="button"
                 onClick={scrollToAbout}
-                className="inline-flex items-center rounded-md bg-white px-5 py-3 text-black text-sm font-semibold hover:bg-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                className="inline-flex items-center rounded-md bg-white px-5 py-3 text-black text-sm font-semibold hover:bg-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black font-space"
               >
                 Learn More
                 <ArrowDown className="ml-2 h-4 w-4" />
@@ -60,7 +72,13 @@ function Home() {
           </div>
 
           {/* Right Side: Image */}
-          <div className="lg:w-1/2 flex justify-center lg:justify-end mt-8 lg:mt-0">
+          <div
+            className={`lg:w-1/2 flex justify-center lg:justify-end mt-8 lg:mt-0 transform transition-all duration-1000 ease-out ${
+              transitionClasses
+                ? transitionClasses
+                : "translate-x-full opacity-0"
+            }`}
+          >
             <img
               src="/images/data-home.jpg"
               className="max-w-full lg:max-w-md rounded-lg shadow-2xl"
@@ -89,16 +107,40 @@ function Home() {
 
         {/* Images Side by Side */}
         <div className="mt-8 flex justify-center gap-12">
-          <img
-            src="/images/center-image.jpg" // Replace with the actual path to your first image
-            alt="Magazine Cover"
-            className="max-w-md w-full h-fit rounded-lg shadow-lg"
-          />
-          <img
-            src="/images/SCIPIA-2 FIRST PAGE.jpg" // Replace with the actual path to your second image
-            alt="Second Magazine Cover"
-            className="max-w-md w-full rounded-lg shadow-lg"
-          />
+          <div
+            onMouseEnter={() => handleMouseEnter()}
+            onMouseLeave={() => handleMouseLeave()}
+          >
+            <img
+              src={
+                hover === true
+                  ? "/images/left-image.jpg"
+                  : "/images/center-image.jpg"
+              }
+              alt="Magazine Cover"
+              className="max-w-md w-full h-fit rounded-lg shadow-lg"
+            />
+            <div className="mt-4 text-white font-space justify-center">
+              Download PDF
+            </div>
+          </div>
+          <div
+            onMouseEnter={() => handleMouseEnter()}
+            onMouseLeave={() => handleMouseLeave()}
+          >
+            <img
+              src={
+                hover === true
+                  ? "/images/SCIPIA-2 SECOND PAGE.jpg"
+                  : "/images/SCIPIA-2 FIRST PAGE.jpg"
+              }
+              alt="Second Magazine Cover"
+              className="max-w-md w-full rounded-lg shadow-lg"
+            />
+            <div className="mt-4 text-white font-space justify-center">
+              Download PDF
+            </div>
+          </div>
         </div>
       </div>
       <Footer />

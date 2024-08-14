@@ -6,9 +6,9 @@ function Footer() {
   return (
     <footer className="w-full bg-custom-dark-blue border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
       <div className="container mx-auto p-4 flex flex-col md:flex-row items-center justify-between">
-        <span className="text-sm text-gray-500 dark:text-gray-400">
+        <span className="text-sm text-gray-500 dark:text-gray-400 font-space">
           © 2024{" "}
-          <Link to="/" className="hover:underline text-white">
+          <Link to="/" className=" text-white font-space">
             CRID™
           </Link>
           . All Rights Reserved.

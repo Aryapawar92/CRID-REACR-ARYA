@@ -16,27 +16,17 @@ function Card({ item }) {
         <h4 className="block mb-2 font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900">
           {item.name}
         </h4>
-        <p className="block font-sans text-base font-medium leading-relaxed text-transparent bg-clip-text bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400">
+        <p className="block font-sans text-base font-medium leading-relaxed  text-black bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400">
           {item.role}
         </p>
       </div>
       <div className="flex justify-center p-4 pt-2 gap-5">
-        {item.Linkedin && (
-          <Link
-            to={item.Linkedin}
-            className="block text-xl font-normal leading-relaxed text-blue-600 hover:text-blue-800"
-          >
-            <Linkedin />
-          </Link>
-        )}
-        {item.instagram && (
-          <Link
-            to={item.instagram}
-            className="block text-xl font-normal leading-relaxed text-purple-600 hover:text-purple-800"
-          >
-            <Instagram />
-          </Link>
-        )}
+        <Link
+          to={item.Linkedin}
+          className="block text-xl font-normal leading-relaxed text-blue-600 hover:text-blue-800"
+        >
+          <Linkedin />
+        </Link>
       </div>
     </div>
   );
